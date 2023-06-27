@@ -38,7 +38,7 @@ export default function Item(props) {
   const estaNoCarrinho = useSelector(state => state.carrinho.some(itemNoCarrinho => itemNoCarrinho.id === id));
 
   function resolverFavorito() {
-    dispatch(mudarFavorito(id));
+    dispatch(mudarFavorito(id)); //marcando um item como favorito, disparando a ação
   }
 
   function resolverCarrinho() {

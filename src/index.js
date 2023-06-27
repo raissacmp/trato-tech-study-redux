@@ -8,7 +8,7 @@ import { Provider } from 'react-redux';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
+    <Provider store={store}> {/* passando o store para que as paginas tenham acesso aos reducers */}
       <Router />
     </Provider>
   </React.StrictMode>

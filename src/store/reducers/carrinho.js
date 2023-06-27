@@ -7,7 +7,7 @@ const carrinhoSlice = createSlice({
   initialState,
   reducers: {
     mudarCarrinho: (state, { payload }) => {
-      const temItem = state.some(item => item.id === payload);
+      const temItem = state.some(item => item.id === payload); // .some verifica se existe item ou não dentro do state
       if (!temItem) return [
         ...state,
         {
@@ -23,7 +23,7 @@ const carrinhoSlice = createSlice({
         return itemNoCarrinho;
       })
     },
-    resetarCarrinho: () => initialState,
+    resetarCarrinho: () => initialState, //resetar o carrinho
   }
 });
 

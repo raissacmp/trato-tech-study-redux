@@ -10,7 +10,7 @@ export default function Carrinho() {
     let total = 0;
     const regexp = new RegExp(state.busca, 'i');
     const carrinhoReduce = state.carrinho.reduce((itens, itemNoCarrinho) => {
-      const item = state.itens.find(item => item.id === itemNoCarrinho.id);
+      const item = state.itens.find(item => item.id === itemNoCarrinho.id); // filtro carrinho
       total += (item.preco * itemNoCarrinho.quantidade);
       if (item.titulo.match(regexp)) {
         itens.push({
@@ -23,6 +23,7 @@ export default function Carrinho() {
     return {
       carrinho: carrinhoReduce,
       total,
+      //retornando o carrinho e o total
     };
   });
   return (
@@ -43,7 +44,7 @@ export default function Carrinho() {
         </div>
         <button
           className={styles.finalizar}
-          onClick={() => dispatch(resetarCarrinho())}
+          onClick={() => dispatch(resetarCarrinho())} //reset carrinho
         >
           Finalizar compra
         </button>

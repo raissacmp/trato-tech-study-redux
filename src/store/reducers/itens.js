@@ -228,11 +228,13 @@ const initialState = [{
   categoria: 'som'
 }];
 
+//reducer para favoritar
+
 const itensSlice = createSlice({
   name: 'itens',
   initialState,
   reducers: {
-    mudarFavorito: (state, { payload }) => {
+    mudarFavorito: (state, { payload }) => { //paylod é p valor que está dentro da action
       state = state.map(item => {
         if(item.id === payload) item.favorito = !item.favorito;
         return item;
